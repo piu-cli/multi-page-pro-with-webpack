@@ -13,6 +13,20 @@ const config = {
       {
         test: /\.js$/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.(less|css)$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
+        ]
       }
     ]
   },

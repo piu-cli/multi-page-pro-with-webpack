@@ -1,4 +1,5 @@
 require('babel-polyfill')
+require('./style.less')
 const quanquan = 'balabala'
 console.log('123456789')
 
