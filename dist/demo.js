@@ -9665,7 +9665,7 @@ exports = module.exports = __webpack_require__(331)(false);
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n  background: red;\n  -webkit-filter: blur(10px);\n          filter: blur(10px);\n}\n", ""]);
+exports.push([module.i, "body,html{-webkit-filter:blur(10px);background:red;filter:blur(10px);height:100%;margin:0;padding:0;width:100%}", ""]);
 
 // exports
 

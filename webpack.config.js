@@ -28,6 +28,7 @@ const config = {
             options: {
               plugins: [
                 require('autoprefixer')(),
+                require('cssnano')()
               ]
             }
           },
