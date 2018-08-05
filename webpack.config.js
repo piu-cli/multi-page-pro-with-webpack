@@ -1,4 +1,7 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+
 const config = {
   entry: './src/pages/test/index.js',
   output: {
@@ -8,11 +11,15 @@ const config = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /\.js$/,
         use: 'babel-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new CleanWebpackPlugin(['dist'])
+  ]
 }
 
 module.exports = config
