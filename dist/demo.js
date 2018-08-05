@@ -65,9 +65,12 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-const quanquan = 'balabala';
+"use strict";
+
+
+var quanquan = 'balabala';
 console.log('123456789');
 
 /***/ })
