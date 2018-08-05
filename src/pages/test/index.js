@@ -1,3 +1,4 @@
+require('babel-polyfill')
 const quanquan = 'balabala'
 console.log('123456789')
 
