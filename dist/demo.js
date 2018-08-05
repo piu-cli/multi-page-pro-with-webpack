@@ -67,6 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
+const quanquan = 'balabala';
 console.log('123456789');
 
 /***/ })
