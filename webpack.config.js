@@ -13,6 +13,8 @@ const config = {
       '@': path.resolve(__dirname, 'src')
     }
   },
+
+  devtool: '#cheap-module-eval-source-map',
   module: {
     rules: [
       {
