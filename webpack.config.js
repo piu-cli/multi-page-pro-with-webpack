@@ -8,6 +8,11 @@ const config = {
     path: path.resolve(__dirname, './dist'),
     filename: 'demo.js'
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   module: {
     rules: [
       {
