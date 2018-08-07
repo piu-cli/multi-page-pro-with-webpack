@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --config ./build/webpack.dev.js",
-    "build": "webpack"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "npm run clean && webpack --config ./build/webpack.prod.js",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
@@ -17,12 +18,12 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
-    "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.5",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-html": "^4.0.5",
     "eslint-plugin-import": "^2.13.0",
@@ -33,6 +34,7 @@
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
     "postcss-loader": "^2.1.6",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^3.10.0",
