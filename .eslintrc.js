@@ -10,6 +10,7 @@ module.exports = {
       'global-require': 0,
       'comma-dangle': [2, 'never'],
       'no-return-assign': 0,
-      'func-names': 0
+      'func-names': 0,
+      'import/no-dynamic-require': 0
     }
 };
