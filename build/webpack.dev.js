@@ -2,10 +2,11 @@
  * @Author: 罗圈圈
  * @Date: 2018-08-07 11:22:19
  * @Last Modified by: 罗圈圈
- * @Last Modified time: 2018-08-07 11:22:19
+ * @Last Modified time: 2018-08-07 15:36:05
  */
 
 const webpackMerge = require('webpack-merge')
+const webpack = require('webpack')
 const path = require('path')
 const baseConfig = require('./webpack.base')
 
@@ -24,13 +25,16 @@ const config = webpackMerge(baseConfig, {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '../dist'),
     open: true,
     inline: true,
-    port: 9000,
+    port: 9001,
     host: '127.0.0.1'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': require('../config/dev')
+    })
   ]
 })
 
