@@ -2,17 +2,22 @@
  * @Author: 罗圈圈
  * @Date: 2018-08-07 11:22:14
  * @Last Modified by: 罗圈圈
- * @Last Modified time: 2018-08-07 15:36:38
+ * @Last Modified time: 2018-08-08 17:17:48
  */
 
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const createPages = require('./createPages')
+const { dependencies } = require('../package.json')
 
 module.exports = {
-  entry: './src/pages/test/index.js',
+  entry: {
+    vender: Object.keys(dependencies),
+    ...createPages.createEntry()
+  },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'demo.js'
+    filename: 'js/[name].[chunkhash:4].js'
   },
   resolve: {
     alias: {
@@ -37,6 +42,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      minChunks: 2,
+      chunks: Object.keys(createPages.createEntry())
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vender', 'manifest'],
+      minChunks: Infinity
+    }),
+    ...createPages.createPlugin()
   ]
 }

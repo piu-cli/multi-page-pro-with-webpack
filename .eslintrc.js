@@ -12,6 +12,7 @@ module.exports = {
       'no-return-assign': 0,
       'func-names': 0,
       'import/no-dynamic-require': 0,
-      'no-param-reassign': 0
+      'no-param-reassign': 0,
+      'no-console': 0
     }
 };

@@ -3,18 +3,17 @@ const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const titleConfig = require('../src/views/titleConfig.json')
 
-const pages = fs.readdirSync(path.resolve(__dirname, '../src/pages'))
+const pages = fs.readdirSync(path.resolve(__dirname, '../src/pages')).filter(item => item !== 'common')
 
 module.exports = {
   createPlugin() {
     return pages.map(page => new HtmlWebpackPlugin({
-      template: page === 'home' ? `./src/views/${page}.html` : `./src/view/${page}/${page}.html`,
-      filename: page === 'home' ? `${page}.html` : `views/${page}.html`,
+      template: `./src/views/${page}.html`,
+      filename: `html/${page}.html`,
       title: titleConfig[page],
       inject: true,
       hash: true,
-      favicon: './favicon.ico',
-      chunks: ['common', page]
+      chunks: ['manifest', 'vender', page]
     }))
   },
   createEntry() {

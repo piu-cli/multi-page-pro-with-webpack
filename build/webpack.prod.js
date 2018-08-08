@@ -2,7 +2,7 @@
  * @Author: 罗圈圈
  * @Date: 2018-08-07 11:22:26
  * @Last Modified by: 罗圈圈
- * @Last Modified time: 2018-08-07 15:35:52
+ * @Last Modified time: 2018-08-08 17:19:45
  */
 
 const webpack = require('webpack')
@@ -11,7 +11,7 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const baseConfig = require('./webpack.base')
 
 const config = webpackMerge(baseConfig, {
-  devtool: '#source-map',
+  // devtool: '#source-map',
   module: {
     rules: [
       {
@@ -49,7 +49,7 @@ const config = webpackMerge(baseConfig, {
       sourceMap: true
     }),
     new ExtractTextWebpackPlugin({
-      filename: '[name].[hash:4].css'
+      filename: 'css/[name].[chunkHash:4].css'
     }),
     new webpack.DefinePlugin({
       'process.env': require('../config/prod')

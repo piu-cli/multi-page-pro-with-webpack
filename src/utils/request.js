@@ -1,3 +1,9 @@
+/**
+ * @Author: 罗圈圈
+ * @Date: 2018-08-08 17:14:23
+ * @Last Modified by: 罗圈圈
+ * @Last Modified time: 2018-08-08 17:14:23
+ */
 import axios from 'axios'
 
 export const request = axios.create({
